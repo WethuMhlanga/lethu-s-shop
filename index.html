@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Shop - Your One-Stop Online Store</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Font Awesome Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <script defer src="script.js"></script>
+  <script defer src="order.js"></script>
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header id="navbar">
+    <div class="logo">
+      <img src="img/IMG_0751.jpg" alt="E-Shop Logo">
+    </div>
+    <nav>
+      <div class="hamburger" id="hamburger-toggle">&#9776;</div>
+      <ul class="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#cart">Cart <i class="fa-solid fa-cart-shopping"></i></a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="admin.html" class="admin-link">Admin</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="fade-section">
+    <div class="hero-overlay">
+      <h1>Welcome to E-Shop</h1>
+      <p>Your one-stop destination for hair, shoes, iPhones, and clothes</p>
+      <a href="#shop" class="shop-btn">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- Shop Section -->
+  <section id="shop" class="fade-section">
+    <h2>Featured Products</h2>
+    <div class="products-container">
+      <!-- Product Card Example -->
+      <div class="product-card" data-id="1" data-name="Stylish Hair" data-price="1129.99">
+        <img src="img/IMG_0753.JPG" alt="Stylish Hair">
+        <h3>Stylish Hair</h3>
+        <p class="price">R1129.99</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+      <div class="product-card" data-id="2" data-name="Trendy Shoes" data-price="1159.99">
+        <img src="img/IMG_0754.JPG" alt="Trendy Shoes">
+        <h3>Trendy Shoes</h3>
+        <p class="price">R1159.99</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+      <div class="product-card" data-id="3" data-name="Latest iPhone" data-price="5999.99">
+        <img src="img/IMG_0755.JPG" alt="Latest iPhone">
+        <h3>Latest iPhone</h3>
+        <p class="price">R5999.99</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+      <div class="product-card" data-id="4" data-name="Fashionable Clothes" data-price="299.99">
+        <img src="img/IMG_0756.JPG" alt="Fashionable Clothes">
+        <h3>Fashionable Clothes</h3>
+        <p class="price">R299.99</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+      <!-- Add more product cards as needed -->
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section id="categories" class="fade-section">
+    <h2>Shop by Category</h2>
+    <div class="categories-container">
+      <div class="category-card">
+        <img src="img/hair-category.jpg" alt="Hair">
+        <h3>Hair</h3>
+      </div>
+      <div class="category-card">
+        <img src="img/shoes-category.jpg" alt="Shoes">
+        <h3>Shoes</h3>
+      </div>
+      <div class="category-card">
+        <img src="img/iphone-category.jpg" alt="iPhones">
+        <h3>iPhones</h3>
+      </div>
+      <div class="category-card">
+        <img src="img/clothes-category.jpg" alt="Clothes">
+        <h3>Clothes</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cart Section -->
+  <section id="cart" class="fade-section">
+    <h2>Your Shopping Cart</h2>
+    <div class="cart-container">
+      <table id="cart-table">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Qty</th>
+            <th>Total</th>
+            <th>Remove</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Cart items will be injected here -->
+        </tbody>
+      </table>
+      <div class="cart-summary">
+        <p>Total: R<span id="cart-total">0.00</span></p>
+        <button id="checkout-btn">Proceed to Checkout</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Checkout Section -->
+<!-- Checkout Section -->
+<section id="checkout">
+    <h2>Checkout</h2>
+    <div class="checkout-container">
+      <form id="order-form">
+        <div class="form-group">
+          <label for="customer-name">Name</label>
+          <input type="text" id="customer-name" name="customer-name" required>
+        </div>
+        <div class="form-group">
+          <label for="customer-surname">Surname</label>
+          <input type="text" id="customer-surname" name="customer-surname" required>
+        </div>
+        <div class="form-group">
+          <label for="customer-phone">Phone Number</label>
+          <input type="tel" id="customer-phone" name="customer-phone" required>
+        </div>
+        <div class="form-group">
+          <label for="pickup-place">Pickup Place</label>
+          <input type="text" id="pickup-place" name="pickup-place" required>
+        </div>
+        <button type="submit" class="order-btn">Place Order</button>
+      </form>
+      <p id="order-confirmation" style="display: none; color: green;">Order placed successfully!</p>
+    </div>
+  </section>
+  
+
+  <!-- Contact Section -->
+<section id="contact">
+    <h2 style="color: black;">Contact Us</h2>
+    <div class="contact-container">
+      <div class="contact-info">
+        <div class="contact-item">
+          <i class="fab fa-whatsapp" style="color: black;"></i>
+          <p style="color: black;">
+            WhatsApp: <a href="https://wa.me/1234567890" style="color: black;">123-456-7890</a>
+          </p>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-phone" style="color: black;"></i>
+          <p style="color: black;">
+            Calls: <a href="tel:1234567890" style="color: black;">123-456-7890</a>
+          </p>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt" style="color: black;"></i>
+          <div style="color: black;">
+            <p>Pickup Spots:</p>
+            <ul style="list-style: none; padding: 0;">
+              <li>123 Market Street</li>
+              <li>456 City Road</li>
+              <li>789 Downtown Ave</li>
+              <li>101 Suburb Ln</li>
+              <li>202 Mall Blvd</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="img/logo.png" alt="E-Shop Logo">
+        <p>Your one-stop shop for all your needs</p>
+      </div>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#shop">Shop</a></li>
+          <li><a href="#categories">Categories</a></li>
+          <li><a href="#cart">Cart</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="adminlogin.html">Admin</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <p>Email: <a href="mailto:support@eshop.com">support@eshop.com</a></p>
+        <p>Phone: 123-456-7890</p>
+        <p>Address: 123 Market Street, City, Country</p>
+      </div>
+      <div class="footer-social">
+        <h3>Follow Us</h3>
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+    </div>
+    <p class="footer-bottom">&copy; 2025 E-Shop. All rights reserved.</p>
+  </footer>
+</body>
+</html>
